@@ -1,0 +1,23 @@
+{
+	"name": "start",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "tsdown"
+	},
+	"devDependencies": {
+		"@lib/alien-signals": "workspace:*",
+		"@lib/alien-signals-v1": "workspace:*",
+		"@lib/angular-core": "workspace:*",
+		"@lib/angular-core-v20": "workspace:*",
+		"@lib/maverick-js-signals": "workspace:*",
+		"@lib/preact-signals-core": "workspace:*",
+		"@lib/signal-polyfill": "workspace:*",
+		"@lib/solidjs-signals": "workspace:*",
+		"@lib/svelte": "workspace:*",
+		"@lib/vue-reactivity": "workspace:*",
+		"mitata": "^1.0.34",
+		"vitest": "^3.1.3"
+	}
+}

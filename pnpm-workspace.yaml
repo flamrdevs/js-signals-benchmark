@@ -1,0 +1,5 @@
+packages:
+  - start
+  - libs/**
+
+shellEmulator: true

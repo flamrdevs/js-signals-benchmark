@@ -1,0 +1,30 @@
+{
+	"name": "js-signals-benchmark",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"preinstall": "npx only-allow pnpm",
+		"build:libs": "turbo build --filter=\"./libs/*\"",
+		"build:start": "turbo build --filter=start",
+		"build": "turbo build",
+		"test": "pnpm run build:libs && pnpm --filter=start exec vitest run",
+		"prepare-bench": "pnpm run test && pnpm run build:start",
+		"bench:node": "pnpm run prepare-bench && node start/dist/start.js",
+		"bench:deno": "pnpm run prepare-bench && deno -A start/dist/start.js",
+		"bench:bun": "pnpm run prepare-bench && bun run start/dist/start.js",
+		"bench": "pnpm run bench:node",
+		"format": "biome check --write",
+		"inspect": "pnpx node-modules-inspector"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@lib/~~~": "workspace:*",
+		"@types/node": "^22.15.15",
+		"tsdown": "^0.11.9",
+		"turbo": "^2.5.3"
+	},
+	"packageManager": "pnpm@10.10.0",
+	"engines": {
+		"node": ">=23.0.0"
+	}
+}
